@@ -1,1 +1,7 @@
-<h1>新規作成<h1>
+<h1>新規作成</h1>
+<%= form_for @user do |f| %>
+  <p> お名前:<%= f.text_field :name %></p>
+  <p> 年齢:<%= f.text_field :age %></p>
+  <p> ご出身:<%= f.text_field :address %></p>
+  <input type="submit", value="作成">
+<% end %>

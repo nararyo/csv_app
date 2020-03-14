@@ -1,1 +1,15 @@
-<h1>hello<h1>
+<h1>登録者一覧</h1>
+<%= link_to "新規作成", new_user_path %>
+<% @users.each do |user| %>
+  <p>
+    名前：<%= user.name %><br>
+    年齢：<%= user.age %><br>
+    出身：<%= user.address%><br>
+    <%= link_to "詳細", user_path(user.id) %>
+    <%= link_to "編集", edit_user_path(user.id)%>
+    <%= link_to "削除", user_path(user.id), {method: :delete}%>
+  </p>
+  
+<% end %>
+
+  <%= link_to "csvデータを取得し表示する", "/users/csv_data" %>
